@@ -1,0 +1,17 @@
+﻿@using CarShop.Models
+@using CarShop.ViewModels
+@model CarsListViewModel
+
+@{
+    Layout = "_Layout";
+}
+<h1>All Automobiles</h1>
+<h3>@Model.carCategory</h3>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (Car item in Model.AllCars)
+        {
+            @Html.Partial("AllCars", item);
+        }
+    }
+</div>

@@ -1,0 +1,12 @@
+﻿@using CarShop.ViewModels
+@model HomeViewModel
+
+<h1>Favourite Automobiles</h1>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (Car item in Model.FavCars)
+        {
+            @Html.Partial("AllCars", item);
+        }
+    }
+</div>

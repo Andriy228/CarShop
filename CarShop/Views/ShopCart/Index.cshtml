@@ -1,0 +1,16 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model CarShop.ViewModels.ShopCartViewModel
+
+<div class="container">
+    @{
+        foreach (var el in Model.shopCart.ListShopItems)
+        {
+            <div class="alert alert-warning mt-3">
+                <b>Automobile:</b>@el.Car.Name<br />
+                <b>Price:</b>@el.Price.ToString("c")
+            </div>
+        }
+    }
+    <br />
+    <a class="btn btn-danger" asp-controller="Order" asp-action="CheckOut">Payment</a>
+</div>
